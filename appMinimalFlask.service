@@ -1,0 +1,16 @@
+[Unit]
+Description=Gunicorn instance to serve myproject
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+
+WorkingDirectory=/root/simplexEnviroment2/appMinimalFlask
+Environment="PATH=/root/simplexEnviroment2/bin"
+ExecStart=/root/simplexEnviroment2/bin/gunicorn --workers 3 --error-logfile /root/error.log --access-logfile /root/access.log --capture-output  --log-level debug --bind unix:appMinimalFlask.sock -m 007 wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+
+
