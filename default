@@ -2,7 +2,7 @@ server {
     listen 80;
     location / {
         include proxy_params;
-        proxy_pass http://unix:/root/simplexEnviroment2/appMinimalFlask/appMinimalFlask.sock;
+        proxy_pass http://unix:/root/simplexEnvironment2/appMinimalFlask/appMinimalFlask.sock;
     }
 }
 
